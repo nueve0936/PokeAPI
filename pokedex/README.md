@@ -1,73 +1,71 @@
-# React + TypeScript + Vite
+# PokeAPI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### **Desarrollador:** Nain Santiago Ayon Nava
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Descripcion breve del proyecto
+Aplicacion web responsiva conectad a la PokeAPIque permite a los usuarios ver una lista de los primeros 151 pokemones
+(1ra generacion). Pueden ver detalles como sus estadisticas base, buscarlo por medio de filtro, marcarlos como favoritos o comparar dos pokemones.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tecnologias utilizadas
+* **React 18:** Biblioteca base para la interfaz.
+* **Vite:** Servidor de desarrollo.
+* **TypeScript:** Tipado estricto.
+* **Tailwind CSS:** Estilos.
+* **React Router DOM:** Manejo de rutas (`/`, `/pokemon/:name`, `/compare`).
+* **PNPM:** Gestor de paquetes.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Instrucciones de instalacion
+Sigue estos pasos para configurar el entorno local:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+1. **Clonar el proyecto** (o acceder a la carpeta raiz del codigo fuente):
+  ```bash
+   cd pokedex
+  ```
+2. **Instalar el PNPM**
+  ```bash
+   pnpm install
+  ```
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Comandos para ejecutar el proyecto
+1. **Estar dentro de pokedex**
+  ```bash
+   cd pokedex
+  ```
+2. **Ejecutar el siguiente comando**
+  ```bash
+   pnpm dev
+  ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Funcionalidades implementadas
+* **Catalgo con paginacion:** Carga inicial controlada directo de los servidores de la PokeAPI.
+* **Buscador:** Filtrado por coincidencia de caracteres en los nombres del Pokemon.
+* **Filtro por tipo:** Clasificacion segun los tipos de los pokemones.
+* **Favoritos locales:** Guardado de datos por medio del uso de localeStorage.
+* **Comparacion:** Menu que permite elegir y mostrar los detalles de dos pokemones al mismo tiempo.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+--- 
+
+## Capturas de pantalla
+
+### Listado de Pokemones
+![Listado de Pokemones](./src/assets/pagina_principal.png)
+### Detalles del Pokemon
+![Detalle del Pokemon](./src/assets/PokeDetalles.png)
+### Filtros del Pokemon
+![Filtros del Pokemon](./src/assets/PokeFiltros.png)
+### Comparacion de los Pokemon
+![Comparacion de los pokemon](./src/assets/PokeComparacion.png)
+
+---
+
+Muchas gracias por leer :D
