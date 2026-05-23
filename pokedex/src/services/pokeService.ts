@@ -6,13 +6,14 @@ const API_URL = 'https://pokeapi.co/api/v2/pokemon';
 interface PokeAPIList {
   count: number;
   next: string | null;
-  prvious: string | null;
+  previous: string | null;
   results: Species[];
 }
 
 export const PokeService = {
   // Tipamos la lista inicial para saber que devuelve un arreglo de Species
-  getList: async (limit = 151): Promise<Species[]> => {
+  // Desplegara 20 por defecto si no se manda ningun limite
+  getList: async (limit = 20): Promise<Species[]> => {
     try {
       const res = await fetch(`${API_URL}?limit=${limit}`);
       const data: PokeAPIList = await res.json();
@@ -23,11 +24,11 @@ export const PokeService = {
     }
   },
 
-  // Tipamos el detalle usando la interfaz 'Pokemon' 
+  // Tipamos el detalle usando la interfaz pokemon 
   getDetail: async (nameOrId: string): Promise<Pokemon> => {
     const res = await fetch(`${API_URL}/${nameOrId}`);
     if (!res.ok) {
-      throw new Error(`No se encontró al Pokemon: ${nameOrId}`);
+      throw new Error(`No se encontro al Pokemon: ${nameOrId}`);
     }
     const data: Pokemon = await res.json();
     return data;

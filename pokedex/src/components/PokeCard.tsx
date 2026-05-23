@@ -21,7 +21,7 @@ export const PokemonCard = ({ name, url, isFavorite, onToggleFavorite }: Props) 
       {/* Boton de favoritos */}
       <button
         onClick={(e) => {
-          e.preventDefault(); // Por seguridad si estuviera dentro de un enlace
+          e.preventDefault(); 
           onToggleFavorite();
         }}
         className="absolute top-2 right-2 text-xl p-1 rounded-full hover:bg-slate-50 transition-colors z-10"

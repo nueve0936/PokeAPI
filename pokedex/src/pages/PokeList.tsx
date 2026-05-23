@@ -4,7 +4,7 @@ import { PokemonCard } from '../components/PokeCard';
 import { FilterBar } from '../components/FilterBar';
 import type { Species } from '../interfaces/Pokemon';
 
-const POKEMON_MAX = 152;
+const POKEMON_MAX = 151;
 
 export const PokeList = () => {
   // Estados basicos
@@ -53,7 +53,7 @@ export const PokeList = () => {
 
           setPokemonTypesMap(typesDictionary);
         } catch (err) {
-          console.error("Error cargando los tipos:", err);
+          console.error("Error cargando los tipos", err);
         }
 
         setLoading(false);

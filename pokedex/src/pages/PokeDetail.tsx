@@ -42,6 +42,7 @@ export const PokeDetail = () => {
   if (error || !pokemon) {
     return (
       <div className="max-w-md mx-auto my-10 p-6 bg-red-50 border-l-4 border-red-500 text-red-700 rounded-2xl shadow-sm">
+        {/* Mensaje de Error */}
         <p className="font-bold">Error</p>
         <p className="text-sm mb-4">{error || 'No se encontraron datos.'}</p>
         <Button to="/" text="← Volver al inicio" className="bg-slate-500 hover:bg-slate-600" />
